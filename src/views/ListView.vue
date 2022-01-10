@@ -157,7 +157,7 @@ export default {
         },
         clear(col) {
             // console.log(col)
-            this.selectedList = this.selectedList.filter(item => {
+            this.uniqueArray = this.uniqueArray.filter(item => {
                 return item.id !== col
             })
         },
