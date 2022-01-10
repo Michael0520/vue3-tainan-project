@@ -16,12 +16,18 @@
                             <th scope="col">NAME</th>
                         </tr>
                     </thead>
-                    <tbody v-for="(item,key) in list" :key="key">
+                    <tbody
+                        v-for="(item,key) in list"
+                        :key="key"
+                        :class="{ 'successCircle': this.status === 'true' }"
+                    >
                         <tr
                             @click="addNum(key + 1, list[key])"
                             @dblclick="doubleClickEvent('isShow')"
                         >
-                            <th scope="row">{{ item.id }}</th>
+                            <th class="circle" scope="row">
+                                <!-- {{ item.status }} -->
+                            </th>
                             <td>{{ item.name }}</td>
                         </tr>
                     </tbody>
@@ -166,7 +172,19 @@ export default {
         },
         test() {
             console.log('test')
+        },
+        filterStatus(item) {
+            const renderStatus = renderStatus.forEach(item => {
+                if (item.status === 'true') {
+                    document.inner
+                } else {
+
+                }
+            });
         }
+    },
+    mounted() {
+
     },
 }
 </script>
@@ -184,7 +202,16 @@ export default {
         width: 100%;
         .table {
             tr {
+                line-height: 32px;
                 &:hover {
+                    background-color: #aaa;
+                }
+                th.circle {
+                    margin: 10px auto 10px auto;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    display: inline-block;
                     background-color: #aaa;
                 }
             }
