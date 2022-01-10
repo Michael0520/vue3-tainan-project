@@ -1,10 +1,9 @@
 <script setup>
-import HelloWorld from '@/components/HelloWorld.vue';
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -15,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router';
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header>
+  </header>-->
 
   <RouterView />
 </template>
@@ -26,7 +25,7 @@ import { RouterLink, RouterView } from 'vue-router';
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
 
   font-weight: normal;
 }
@@ -79,7 +78,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
@@ -115,5 +114,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
