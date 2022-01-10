@@ -205,8 +205,7 @@ export default {
                 &:hover {
                     background-color: #aaa;
                 }
-                th {
-                }
+
                 th.circle {
                     display: flex;
                     justify-content: center;
