@@ -16,12 +16,11 @@
                             <th scope="col">NAME</th>
                         </tr>
                     </thead>
-                    <tbody
-                        v-for="(item,key) in list"
-                        :key="key"
-                        :class="{ 'successCircle': this.status === 'true' }"
-                    >
+                    <tbody>
                         <tr
+                            v-for="(item,key) in list"
+                            :key="key"
+                            :class="{ 'successCircle': this.list.status === 'true' }"
                             @click="addNum(key + 1, list[key])"
                             @dblclick="doubleClickEvent('isShow')"
                         >
@@ -206,13 +205,19 @@ export default {
                 &:hover {
                     background-color: #aaa;
                 }
+                th {
+                }
                 th.circle {
+                    display: flex;
+                    justify-content: center;
                     margin: 10px auto 10px auto;
                     height: 25px;
                     width: 25px;
                     border-radius: 50%;
-                    display: inline-block;
                     background-color: #aaa;
+                }
+                th.successCircle {
+                    background-color: hsla(160, 100%, 37%, 1);
                 }
             }
         }
