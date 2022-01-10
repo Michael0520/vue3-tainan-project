@@ -17,7 +17,10 @@
                         </tr>
                     </thead>
                     <tbody v-for="(item,key) in list" :key="key">
-                        <tr @click="addNum(key + 1, list[key])" v-bind="doubleClickEvent('isShow')">
+                        <tr
+                            @click="addNum(key + 1, list[key])"
+                            @dblclick="doubleClickEvent('isShow')"
+                        >
                             <th scope="row">{{ item.id }}</th>
                             <td>{{ item.name }}</td>
                         </tr>
@@ -55,24 +58,6 @@
                     </div>
                 </div>
             </div>
-            <!-- canvas-modal -->
-            <!-- <div
-                class="offcanvas offcanvas-end"
-                tabindex="-1"
-                id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel"
-            >
-                <div class="offcanvas-header">
-                    <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-                    <button
-                        type="button"
-                        class="btn-close text-reset"
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="offcanvas-body">...</div>
-            </div>-->
         </div>
     </div>
 </template>
@@ -177,7 +162,10 @@ export default {
             })
         },
         doubleClickEvent(key) {
-            document.addEventListener('dblclick', this.changeShow(key))
+            this.changeShow(key)
+        },
+        test() {
+            console.log('test')
         }
     },
 }
@@ -187,10 +175,8 @@ export default {
 .content {
     background-color: #fff;
     color: #000;
-    margin-left: 120px;
-    margin-top: 80px;
+    margin: 80px auto auto 120px;
     padding: 40px 0 40px 40px;
-    height: 100vh;
     height: 100%;
     border: 5px solid hsla(160, 100%, 37%, 1);
 
